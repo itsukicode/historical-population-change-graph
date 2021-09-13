@@ -1,0 +1,37 @@
+on:
+  [push, pull_request]: # mainブランチにプッシュかPRした時に実行
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v2 # ubuntu環境にmainブランチをチェックアウト
+      - name: Setup Node Environment
+        uses: actions/setup-node@v2 # ビルド用NodeJSをセットアップ
+        with:
+          node-version: '12.x'
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)" # localのcacheディレクトリへのパスを取得
+      - uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      # --prefer-offlineにする事でyarnがcacheを最初に確認し、そこに存在しない場合packageのみにインターネットから
+      # 取得してくる事でworkflow時間を削減することが可能
+      - name: Install Project Dependencies
+        run: yarn --prefer-offline
+      - name: Test Application
+        run: yarn test a
+      - name: Build Application
+        run: yarn build
+      # - name: Deploy to Firebase
+      #   uses: w9jds/firebase-action@v2.0.0 # Firebaseへアップロード
+      #   with:
+      #     args: deploy --only hosting
+      #   env:
+      #     FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
