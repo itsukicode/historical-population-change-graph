@@ -2,10 +2,13 @@
 :root {
   /* Background */
   --bg-gray: #f5f5f5;
+  --bg-primary: #00a0e9;
   /* Text */
   --text-black: #3c3c3c;
   /* Border */
+  --border-light-gray: #dee1e5;
   --border-gray: #e6e6e6;
+  --border-white: #fff;
   /* Font */
   --font-xxlg: 2.8rem;
   --font-xlg: 2.4rem;
