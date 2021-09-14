@@ -2,6 +2,7 @@
 /* eslint-disable import/first */
 import emotionReset from 'emotion-reset'
 import { Global, css } from '@emotion/react'
+import './style.css'
 
 const hoge = css`
   color: green;
@@ -16,9 +17,12 @@ export const App: React.VFC = () => (
         ${emotionReset}
         *, *::after, *::before {
           box-sizing: border-box;
+          font-size: 62.5%;
+        }
+        html {
         }
       `}
     />
-    <h1 css={hoge}>Enjoy this Project!</h1>
+    <h1 css={hoge}>Enjoy Project!</h1>
   </div>
 )

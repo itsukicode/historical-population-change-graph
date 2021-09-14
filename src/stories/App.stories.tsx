@@ -1,4 +1,7 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import {
+  ComponentStory,
+  ComponentMeta,
+} from '@storybook/react'
 import { App } from 'components/pages/App'
 // ______________________________________________________
 //
@@ -9,7 +12,8 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: '全てのコンポーネントが組み合わさった最終的なアプリケーション',
+        component:
+          '全てのコンポーネントが組み合わさった最終的なアプリケーション',
       },
     },
   },

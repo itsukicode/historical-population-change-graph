@@ -24,9 +24,10 @@ module.exports = {
   plugins: ['react', '@typescript-eslint'],
   ignorePatterns: ['.eslintrc.js'],
   rules: {
+    'react/prop-types': 'off',
     'no-use-before-define': 'off',
-    '@typescript-eslint/no-use-before-define':
-      'off',
+    'react/destructuring-assignment': [0, 'always'],
+    '@typescript-eslint/no-use-before-define': 'off',
     'import/prefer-default-export': 'off',
     'import/extensions': [
       'error',
@@ -55,12 +56,7 @@ module.exports = {
     'import/resolver': {
       node: {
         paths: ['src'],
-        extensions: [
-          '.js',
-          '.jsx',
-          '.ts',
-          '.tsx',
-        ],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
     },
   },

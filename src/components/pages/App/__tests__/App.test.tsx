@@ -5,6 +5,6 @@ import { App } from 'components/pages/App'
 describe('App Component', () => {
   it('should render App component successfully', () => {
     render(<App />)
-    expect(screen.getByText(/Enjoy this Project!/i)).toBeInTheDocument()
+    expect(screen.getByText(/Enjoy Project!/i)).toBeInTheDocument()
   })
 })

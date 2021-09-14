@@ -34,7 +34,7 @@ module.exports = {
       const abs_path = `src/components/${path}`
       const parent_path = `src/components/${category}/`
       const styles = have_style ? 'const styles = css``' : ''
-      const type_annotate = have_props ? 'React.VFC<Props>' : 'React.VFC'
+      const type_annotate = have_props ? `React.VFC<${component_name}Props>` : 'React.VFC'
       const props = have_props ? '({})' : '()'
       const tag = 'div'
       return {

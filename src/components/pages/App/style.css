@@ -1,0 +1,21 @@
+/* Custom Properties */
+:root {
+  /* Background */
+  --bg-gray: #f5f5f5;
+  /* Text */
+  --text-black: #3c3c3c;
+  /* Border */
+  --border-gray: #e6e6e6;
+  /* Font */
+  --font-xxlg: 2.8rem;
+  --font-xlg: 2.4rem;
+  --font-lg: 2rem;
+  --font-md: 1.8rem;
+  --font-sm: 1.6rem;
+  --font-xsm: 1.4rem;
+}
+
+/* 1rem == 10px */
+html {
+  font-size: 62.5%;
+}
