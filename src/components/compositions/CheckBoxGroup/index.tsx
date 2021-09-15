@@ -6,11 +6,11 @@ import { CheckBoxList, PrefectureData } from 'components/modules/CheckBoxList'
 // ______________________________________________________
 // Styles
 const wrap = css`
+  @media (min-width: 768px) {
+    width: 50%;
+  }
   @media (min-width: 1024px) {
-    border: 2px solid var(--border-light-gray);
-    border-radius: 5px;
-    padding: 20px;
-    width: 370px;
+    width: 40%;
   }
 `
 const space = css`

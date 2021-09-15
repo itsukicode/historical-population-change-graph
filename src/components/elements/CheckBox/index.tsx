@@ -76,14 +76,6 @@ const checkbox = css`
   display: flex;
   margin-right: 5px;
   margin-bottom: 5px;
-  &:nth-of-type(3n) {
-    margin-right: 0;
-  }
-  @media (min-width: 768px) {
-    &:nth-of-type(3n) {
-      margin-right: 5px;
-    }
-  }
 `
 const label = css`
   display: flex;
