@@ -33,7 +33,7 @@ export const LineChart = Template.bind({})
 LineChart.args = {
   data: [
     {
-      prefecture: '東京', // Legend
+      prefecture: '東京都', // Legend
       data: [
         // Year => X axis value, Value => Y axis value
         { year: 1985, value: 2817 },
@@ -43,7 +43,7 @@ LineChart.args = {
       ],
     },
     {
-      prefecture: '京都',
+      prefecture: '京都府',
       data: [
         { year: 1985, value: 7610 },
         { year: 1990, value: 3431 },

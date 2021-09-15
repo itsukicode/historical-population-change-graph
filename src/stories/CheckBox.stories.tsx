@@ -1,7 +1,4 @@
-import {
-  ComponentStory,
-  ComponentMeta,
-} from '@storybook/react'
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { CheckBox } from 'components/elements/CheckBox'
 // ______________________________________________________
 //
@@ -20,8 +17,7 @@ export default {
   argTypes: {
     id: {
       name: 'id',
-      description:
-        'それぞれのチェックボックスが固有でもつID',
+      description: 'それぞれのチェックボックスが固有でもつID',
       table: {
         type: { summary: 'number' },
         defaultValue: { summary: 1 },
@@ -37,8 +33,7 @@ export default {
     },
     checked: {
       name: 'checked',
-      description:
-        'クリックされた時はtrue, されていない時はfalse',
+      description: 'クリックされた時はtrue, されていない時はfalse',
       table: {
         type: { summary: 'boolean' },
         defaultValue: { summary: 'false' },
@@ -47,14 +42,8 @@ export default {
   },
 } as ComponentMeta<typeof CheckBox>
 
-const Template: ComponentStory<typeof CheckBox> = (
-  args
-) => (
-  <CheckBox
-    id={args.id}
-    prefecture={args.prefecture}
-    checked={args.checked}
-  />
+const Template: ComponentStory<typeof CheckBox> = (args) => (
+  <CheckBox id={args.id} prefecture={args.prefecture} checked={args.checked} />
 )
 
 export const CheckBox1 = Template.bind({})
