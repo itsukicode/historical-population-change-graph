@@ -2,7 +2,9 @@
 :root {
   /* Background */
   --bg-gray: #f5f5f5;
+  --bg-light-primary: #eef4f8;
   --bg-primary: #00a0e9;
+  --bg-white: #fff;
   /* Text */
   --text-black: #3c3c3c;
   /* Border */
