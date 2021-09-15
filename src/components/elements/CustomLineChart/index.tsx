@@ -139,7 +139,7 @@ export const CustomLineChart: React.VFC<CustomLineChartProps> = ({ data }) => (
 CustomLineChart.defaultProps = {
   data: [
     {
-      prefecture: '東京', // Legend
+      prefecture: '東京都', // Legend
       data: [
         // Year => X axis value, Value => Y axis value
         { year: 1985, value: 2817 },
@@ -149,7 +149,7 @@ CustomLineChart.defaultProps = {
       ],
     },
     {
-      prefecture: '京都',
+      prefecture: '京都府',
       data: [
         { year: 1985, value: 7610 },
         { year: 1990, value: 3431 },

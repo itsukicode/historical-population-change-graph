@@ -29,7 +29,7 @@
     "fix": "yarn format && yarn lint:fix",
     "format": "eslint --fix ./src/**/*.tsx && prettier --write ./src/**/*.tsx",
     "cm": "cz",
-    "storybook": "start-storybook -p 6006 -s public",
+    "sb": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "new:component": "hygen new component"
   },

@@ -5,7 +5,7 @@ import { CustomLineChart, PopulationDataByPrefecture } from 'components/elements
 // 1980 - 2045 => point every 5 years
 const data: PopulationDataByPrefecture[] = [
   {
-    prefecture: '東京', // Legend
+    prefecture: '東京都', // Legend
     data: [
       // Year => X axis value, Value => Y axis value
       { year: 1985, value: 12817 },

@@ -1,7 +1,4 @@
-import {
-  ComponentStory,
-  ComponentMeta,
-} from '@storybook/react'
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { Heading } from 'components/elements/Heading'
 // ______________________________________________________
 //
