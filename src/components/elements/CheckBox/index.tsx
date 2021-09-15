@@ -118,8 +118,8 @@ const checkmark = (isChecked: boolean) => css`
     &::before {
       content: '';
       position: absolute;
-      top: 3px;
-      left: 7px;;
+      top: 5px;
+      left: 8px;
       display: block;
       width: 5px;
       height: 10px;
@@ -127,8 +127,8 @@ const checkmark = (isChecked: boolean) => css`
       border-bottom: 3px solid var(--border-white);
       transform: rotate(45deg);
       @media (min-width: 1024px) {
-        top: 4px;
-        left: 8px;
+        top: 6px;
+        left: 9px;
       }
     }
   `}
