@@ -37,9 +37,10 @@ type CustomLineChartProps = {
 // Styles
 const wrap = css`
   width: 100%;
+  /* width: 400px; */
   height: 200px;
   @media (min-width: 1024px) {
-    height: 300px;
+    /* height: 300px; */
   }
 `
 // ______________________________________________________
@@ -98,7 +99,7 @@ const lineColor = [
 export const CustomLineChart: React.VFC<CustomLineChartProps> = ({ data }) => (
   <div css={wrap} data-testid="LINECHART">
     <ResponsiveContainer width="100%" height="100%">
-      <LineChart width={500} height={300}>
+      <LineChart>
         <CartesianGrid fill="#FEFEFE" />
         <XAxis
           dataKey="year"
@@ -110,8 +111,8 @@ export const CustomLineChart: React.VFC<CustomLineChartProps> = ({ data }) => (
         >
           <Label value="年度" offset={0} position="insideBottom" fontWeight="bold" />
         </XAxis>
-        <YAxis dataKey="value" type="number" domain={['dataMin-1000', 'dataMax+1000']}>
-          <Label value="人口数" offset={5} position="insideLeft" fontWeight="bold" />
+        <YAxis dataKey="value" type="number" domain={['dataMin-1000', 'dataMax+1000']} width={40}>
+          <Label value="人口数" offset={0} position="insideLeft" fontWeight="bold" />
         </YAxis>
         <Tooltip />
         <Legend
