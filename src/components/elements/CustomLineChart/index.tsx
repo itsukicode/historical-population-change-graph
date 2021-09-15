@@ -96,7 +96,7 @@ const lineColor = [
 // ______________________________________________________
 // Component
 export const CustomLineChart: React.VFC<CustomLineChartProps> = ({ data }) => (
-  <div css={wrap}>
+  <div css={wrap} data-testid="LINECHART">
     <ResponsiveContainer width="100%" height="100%">
       <LineChart width={500} height={300}>
         <CartesianGrid fill="#FEFEFE" />
