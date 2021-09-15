@@ -24,10 +24,6 @@ type CheckBoxListProps = {
 const styles = css`
   display: flex;
   flex-wrap: wrap;
-  max-width: 218px;
-  @media (min-width: 768px) {
-    max-width: 365px;
-  }
 `
 // ______________________________________________________
 // Component

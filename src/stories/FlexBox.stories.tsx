@@ -32,7 +32,13 @@ export default {
 } as ComponentMeta<typeof FlexBox>
 
 const spacing = css`
-  height: 10px;
+  height: 30px;
+  @media (min-width: 768px) {
+    width: 30px;
+  }
+  @media (min-width: 1024px) {
+    width: 50px;
+  }
 `
 
 const Template: ComponentStory<typeof FlexBox> = () => (
@@ -62,6 +68,43 @@ const data: PopulationDataByPrefecture[] = [
       { year: 1990, value: 3431 },
       { year: 2015, value: 9431 },
       { year: 2045, value: 1010 },
+    ],
+  },
+  {
+    prefecture: '大阪府',
+    data: [
+      { year: 1985, value: 6610 },
+      { year: 1990, value: 2431 },
+      { year: 2015, value: 1431 },
+      { year: 2045, value: 4010 },
+    ],
+  },
+  {
+    prefecture: '東京都', // Legend
+    data: [
+      // Year => X axis value, Value => Y axis value
+      { year: 1985, value: 2817 },
+      { year: 1990, value: 2707 },
+      { year: 2015, value: 2571 },
+      { year: 2045, value: 2199 },
+    ],
+  },
+  {
+    prefecture: '京都府',
+    data: [
+      { year: 1985, value: 7610 },
+      { year: 1990, value: 3431 },
+      { year: 2015, value: 9431 },
+      { year: 2045, value: 1010 },
+    ],
+  },
+  {
+    prefecture: '大阪府',
+    data: [
+      { year: 1985, value: 6610 },
+      { year: 1990, value: 2431 },
+      { year: 2015, value: 1431 },
+      { year: 2045, value: 4010 },
     ],
   },
   {
