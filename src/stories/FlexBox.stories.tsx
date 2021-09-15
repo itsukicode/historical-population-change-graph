@@ -57,8 +57,8 @@ const data: PopulationDataByPrefecture[] = [
       // Year => X axis value, Value => Y axis value
       { year: 1985, value: 2817 },
       { year: 1990, value: 2707 },
-      { year: 2015, value: 2571 },
-      { year: 2045, value: 2199 },
+      { year: 2000, value: 2571 },
+      { year: 2005, value: 2199 },
     ],
   },
   {
@@ -66,54 +66,54 @@ const data: PopulationDataByPrefecture[] = [
     data: [
       { year: 1985, value: 7610 },
       { year: 1990, value: 3431 },
-      { year: 2015, value: 9431 },
-      { year: 2045, value: 1010 },
+      { year: 2000, value: 9431 },
+      { year: 2005, value: 1010 },
     ],
   },
   {
-    prefecture: '大阪府',
+    prefecture: '福岡県',
     data: [
       { year: 1985, value: 6610 },
       { year: 1990, value: 2431 },
-      { year: 2015, value: 1431 },
-      { year: 2045, value: 4010 },
+      { year: 2000, value: 1431 },
+      { year: 2005, value: 4010 },
     ],
   },
   {
-    prefecture: '東京都', // Legend
+    prefecture: '長野県', // Legend
     data: [
       // Year => X axis value, Value => Y axis value
-      { year: 1985, value: 2817 },
-      { year: 1990, value: 2707 },
-      { year: 2015, value: 2571 },
-      { year: 2045, value: 2199 },
+      { year: 1985, value: 3817 },
+      { year: 1990, value: 2087 },
+      { year: 2000, value: 1571 },
+      { year: 2005, value: 3199 },
     ],
   },
   {
-    prefecture: '京都府',
+    prefecture: '北海道',
     data: [
-      { year: 1985, value: 7610 },
-      { year: 1990, value: 3431 },
-      { year: 2015, value: 9431 },
-      { year: 2045, value: 1010 },
+      { year: 1985, value: 1610 },
+      { year: 1990, value: 2431 },
+      { year: 2000, value: 3431 },
+      { year: 2005, value: 4010 },
     ],
   },
   {
-    prefecture: '大阪府',
+    prefecture: '山口県',
     data: [
       { year: 1985, value: 6610 },
-      { year: 1990, value: 2431 },
-      { year: 2015, value: 1431 },
-      { year: 2045, value: 4010 },
+      { year: 1990, value: 5431 },
+      { year: 2000, value: 4431 },
+      { year: 2005, value: 3010 },
     ],
   },
   {
-    prefecture: '大阪府',
+    prefecture: '沖縄県',
     data: [
-      { year: 1985, value: 6610 },
-      { year: 1990, value: 2431 },
-      { year: 2015, value: 1431 },
-      { year: 2045, value: 4010 },
+      { year: 1985, value: 1610 },
+      { year: 1990, value: 4431 },
+      { year: 2000, value: 1431 },
+      { year: 2005, value: 7010 },
     ],
   },
 ]

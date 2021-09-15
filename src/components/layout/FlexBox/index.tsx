@@ -31,4 +31,8 @@ const wrap = css`
 `
 // ______________________________________________________
 // Component
-export const FlexBox: React.VFC<FlexBoxProps> = ({ children }) => <div css={wrap}>{children}</div>
+export const FlexBox: React.VFC<FlexBoxProps> = ({ children }) => (
+  <div css={wrap} data-testid="FLEXBOX">
+    {children}
+  </div>
+)
