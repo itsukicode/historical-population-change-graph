@@ -12,9 +12,10 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
-    "emotion-reset": "^3.0.1",
+    "normalize.css": "^8.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-hot-toast": "^2.1.1",
     "react-scripts": "4.0.3",
     "recharts": "^2.1.2",
     "typescript": "^4.1.2",
@@ -29,9 +30,9 @@
     "fix": "yarn format && yarn lint:fix",
     "format": "eslint --fix ./src/**/*.tsx && prettier --write ./src/**/*.tsx",
     "cm": "cz",
-    "storybook": "start-storybook -p 6006 -s public",
+    "sb": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "new:component": "hygen new component"
+    "nc": "hygen new component"
   },
   "eslintConfig": {
     "extends": [

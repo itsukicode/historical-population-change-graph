@@ -1,0 +1,6 @@
+/* StoryBookのbackgroud-colorは白にする */
+@import './style.css';
+
+body {
+  background-color: var(--bg-white);
+}

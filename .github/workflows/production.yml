@@ -1,6 +1,11 @@
-on:
-  [push, pull_request]: # mainブランチにプッシュかPRした時に実行
-    branches: [main]
+name: Firebase-Deploy-Workflow
+on: # プッシュもしくはPull Requestでワークフローをトリガーする。ただしメインブランチの場合のみ。
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
