@@ -34,9 +34,9 @@ jobs:
         run: yarn test a
       - name: Build Application
         run: yarn build
-      # - name: Deploy to Firebase
-      #   uses: w9jds/firebase-action@v2.0.0 # Firebaseへアップロード
-      #   with:
-      #     args: deploy --only hosting
-      #   env:
-      #     FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@v2.0.0 # Firebaseへアップロード
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
