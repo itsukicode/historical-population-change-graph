@@ -46,9 +46,9 @@ const Template: ComponentStory<typeof CheckBox> = (args) => (
   <CheckBox id={args.id} prefecture={args.prefecture} checked={args.checked} />
 )
 
-export const CheckBox1 = Template.bind({})
-CheckBox1.args = {
+export const Default = Template.bind({})
+Default.args = {
   id: 1,
-  prefecture: '東京',
+  prefecture: '東京都',
   checked: true,
 }

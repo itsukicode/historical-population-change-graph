@@ -52,7 +52,8 @@ export const Heading: React.VFC<HeadingProps> = ({ type, children }) => {
     }
   }
 }
-
+// ______________________________________________________
+// 初期値
 Heading.defaultProps = {
   type: 'h1',
   children: '都道府県別の総人口推移グラフ',
