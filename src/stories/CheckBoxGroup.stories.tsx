@@ -15,7 +15,7 @@ export default {
   },
 } as ComponentMeta<typeof CheckBoxGroup>
 
-const Template: ComponentStory<typeof CheckBoxGroup> = (args) => <CheckBoxGroup data={args.data} />
+const Template: ComponentStory<typeof CheckBoxGroup> = () => <CheckBoxGroup />
 
 export const Default = Template.bind({})
 Default.args = {

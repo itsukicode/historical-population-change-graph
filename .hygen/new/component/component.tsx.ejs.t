@@ -8,7 +8,7 @@ import { css } from '@emotion/react'
 <% } -%>
 <% if (have_props) { -%>
 // ______________________________________________________
-// Type
+// Props Type
 type <%= component_name %>Props = {
   /**
   * The type to use for the this component

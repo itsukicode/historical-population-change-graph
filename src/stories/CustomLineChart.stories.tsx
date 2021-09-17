@@ -14,15 +14,6 @@ export default {
       },
     },
   },
-  argTypes: {
-    data: {
-      name: 'data',
-      description: '各都道府県の毎５年ごと(1980〜2045年)の人口構成のデータ',
-      table: {
-        // defaultValue: { summary: data },
-      },
-    },
-  },
 } as ComponentMeta<typeof CustomLineChart>
 
 const Template: ComponentStory<typeof CustomLineChart> = () => <CustomLineChart />

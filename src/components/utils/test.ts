@@ -1,17 +1,7 @@
-import { MainAppContext } from '../src/components/compositions/MainApp'
-import '../src/components/pages/App/stories.css'
+import { PopulationDataByPrefecture } from 'types/PopulationTypes'
+import { PrefectureData } from 'types/PrefecturesTypes'
 
-export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/,
-    },
-  },
-}
-
-const areaData = [
+const areaData: PrefectureData[] = [
   { prefCode: 1, prefName: '北海道', checked: false },
   { prefCode: 2, prefName: '青森県', checked: false },
   { prefCode: 3, prefName: '岩手県', checked: false },
@@ -61,30 +51,20 @@ const areaData = [
   { prefCode: 47, prefName: '沖縄県', checked: false },
 ]
 
-const populationData = [
+const populationData: PopulationDataByPrefecture[] = [
   {
     prefecture: '東京都', // Legend
     data: [
       // Year => X axis value, Value => Y axis value
-      { year: 1985, value: 3417 },
+      { year: 1985, value: 2817 },
       { year: 1990, value: 2707 },
-      { year: 2015, value: 1571 },
-      { year: 2045, value: 3199 },
-    ],
-  },
-  {
-    prefecture: '京都府',
-    data: [
-      { year: 1985, value: 1610 },
-      { year: 1990, value: 2431 },
-      { year: 2015, value: 3431 },
-      { year: 2045, value: 3010 },
+      { year: 2015, value: 2571 },
+      { year: 2045, value: 2199 },
     ],
   },
 ]
-
-const handleCheckedCheckBox = () => {}
-const handleUncheckedCheckBox = () => {}
+const handleCheckedCheckBox = jest.fn()
+const handleUncheckedCheckBox = jest.fn()
 
 export const mainAppContextValue = {
   areaData,
@@ -92,11 +72,3 @@ export const mainAppContextValue = {
   handleCheckedCheckBox,
   handleUncheckedCheckBox,
 }
-
-export const decorators = [
-  (Story) => (
-    <MainAppContext.Provider value={mainAppContextValue}>
-      <Story />
-    </MainAppContext.Provider>
-  ),
-]

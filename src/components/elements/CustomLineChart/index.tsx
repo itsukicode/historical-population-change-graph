@@ -1,8 +1,7 @@
 /** @jsxImportSource @emotion/react */
 /* eslint-disable import/first */
 import { css } from '@emotion/react'
-import { useMainContext } from 'components/compositions/MainApp'
-import { Prefectures } from 'components/elements/CheckBox'
+import { useMainContext } from 'hooks/useMainContext'
 import {
   LineChart,
   Line,
@@ -14,15 +13,7 @@ import {
   CartesianGrid,
   ResponsiveContainer,
 } from 'recharts'
-// ______________________________________________________
-// Type
-export type PopulationDataByPrefecture = {
-  prefecture: Prefectures | 'X県'
-  data: {
-    year: number
-    value: number
-  }[]
-}
+import { PopulationDataByPrefecture } from 'types/PopulationTypes'
 // ______________________________________________________
 // Styles
 const wrap = css`
@@ -53,7 +44,11 @@ const lineColor = [
 // ______________________________________________________
 // Component
 export const CustomLineChart: React.VFC = () => {
+  // ______________________________________________________
+  // Use Functions
   const { populationData } = useMainContext()
+  // ______________________________________________________
+  // UI
   return (
     <div css={wrap} data-testid="LINECHART">
       <ResponsiveContainer width="100%" height="100%">
@@ -69,17 +64,12 @@ export const CustomLineChart: React.VFC = () => {
           >
             <Label value="人口数 / 年度" offset={0} position="insideBottom" fontWeight="bold" />
           </XAxis>
-          <YAxis
-            dataKey="value"
-            type="number"
-            domain={['dataMin-1000', 'dataMax+1000']}
-            width={45}
-          />
+          <YAxis dataKey="value" type="number" domain={['dataMin', 'dataMax']} width={45} />
           <Tooltip />
           <Legend layout="vertical" align="right" verticalAlign="top" wrapperStyle={{ right: 0 }} />
 
           {populationData &&
-            populationData.map((p, i) => (
+            populationData.map((p: PopulationDataByPrefecture, i: number) => (
               <Line
                 dataKey="value"
                 data={p.data}

@@ -4,13 +4,14 @@ import { css } from '@emotion/react'
 // ______________________________________________________
 // Type
 type Element = 'h1' | 'h2' | undefined
-
+// ______________________________________________________
+// Props Type
 export type HeadingProps = {
   /**
-   * The default element
+   * The default element type
    * @default 'h1'
    */
-  type: Element
+  type?: Element
   children: string
 }
 // ______________________________________________________
@@ -20,7 +21,7 @@ const H1Style = css`
   color: var(--text-black);
   font-size: var(--font-md);
   font-weight: bold;
-  padding: 2rem 0;
+  padding: 20px 0;
   text-align: center;
   @media (min-width: 1024px) {
     font-size: var(--font-xxlg);
@@ -30,7 +31,7 @@ const H2Style = css`
   color: var(--text-black);
   font-size: var(--font-md);
   border-bottom: 1px solid var(--border-gray);
-  padding-bottom: 0.8rem;
+  padding-bottom: 8px;
   @media (min-width: 1024px) {
     font-size: var(--font-xlg);
     border-bottom: 2px solid var(--border-gray);
@@ -55,5 +56,4 @@ export const Heading: React.VFC<HeadingProps> = ({ type, children }) => {
 // 初期値
 Heading.defaultProps = {
   type: 'h1',
-  children: '都道府県別の総人口推移グラフ',
 }

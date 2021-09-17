@@ -2,12 +2,8 @@
 /* eslint-disable import/first */
 import { css } from '@emotion/react'
 // ______________________________________________________
-// Type
+// Props Type
 type FlexBoxProps = {
-  /**
-   * The type to use for the this component
-   * @default None
-   */
   children: React.ReactNode
 }
 // ______________________________________________________

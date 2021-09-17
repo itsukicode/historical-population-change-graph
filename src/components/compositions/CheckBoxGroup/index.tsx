@@ -2,11 +2,7 @@
 /* eslint-disable import/first */
 import { css } from '@emotion/react'
 import { Heading } from 'components/elements/Heading'
-import { CheckBoxList, PrefectureData } from 'components/modules/CheckBoxList'
-// Type
-type CheckBoxGroupProps = {
-  data: PrefectureData[]
-}
+import { CheckBoxList } from 'components/modules/CheckBoxList'
 // ______________________________________________________
 // Styles
 const wrap = css`
@@ -19,10 +15,10 @@ const space = css`
 `
 // ______________________________________________________
 // Component
-export const CheckBoxGroup: React.VFC<CheckBoxGroupProps> = ({ data }) => (
+export const CheckBoxGroup: React.VFC = () => (
   <div css={wrap} data-testid="CHECKBOXGROUP">
     <Heading type="h2">都道府県</Heading>
     <div css={space} />
-    <CheckBoxList data={data} />
+    <CheckBoxList />
   </div>
 )

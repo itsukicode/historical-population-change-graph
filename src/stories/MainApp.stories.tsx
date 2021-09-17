@@ -19,4 +19,3 @@ export default {
 const Template: ComponentStory<typeof MainApp> = () => <MainApp />
 
 export const Default = Template.bind({})
-Default.args = {}

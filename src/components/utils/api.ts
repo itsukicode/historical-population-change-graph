@@ -1,9 +1,22 @@
-import { Prefectures } from 'components/elements/CheckBox'
+import { Prefectures } from 'types/PrefecturesTypes'
 
+// API詳細仕様
+// APIへアクセスするには、APIキーをリクエストヘッダーX-API-KEYを設定する必要
 const API_KEY = process.env.REACT_APP_POPULATION_API || ''
 const OPTIONS = {
   headers: { 'Content-Type': 'application/json', 'X-API-KEY': `${API_KEY}` },
 }
+
+// 都道府県一覧
+// https://opendata.resas-portal.go.jp/docs/api/v1/prefectures.html
+// Ex.
+// {
+//   "message": null,
+//   "result": [{
+//                 "prefCode": 1,
+//                 "prefName": "北海道"
+//              }....]
+//  }
 export type AreaData = {
   result: {
     prefCode: number
@@ -20,6 +33,25 @@ export async function fetchAreaData(): Promise<AreaData> {
   return data
 }
 
+// 人口構成
+// https://opendata.resas-portal.go.jp/docs/api/v1/population/composition/perYear.html
+// Ex.
+// {
+//   "message": null,
+//   "result": {
+//       "boundaryYear": 2015,
+//       "data": [{
+//           "label": "総人口",
+//           "data": [{
+//               "year": 1980,
+//               "value": 12817
+//           }, {
+//               "year": 1985,
+//               "value": 12707
+//           },]
+//         }]
+//     }, ...
+// }
 export type PopulationData = {
   result: {
     data: {
