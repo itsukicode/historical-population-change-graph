@@ -1,4 +1,5 @@
 import { MainAppContext } from '../src/components/compositions/MainApp'
+import '../src/components/pages/App/stories.css'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

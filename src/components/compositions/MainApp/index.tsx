@@ -9,6 +9,7 @@ import { fetchAreaData, fetchPopulationData } from 'components/utils/api'
 import { PrefectureData } from 'components/modules/CheckBoxList'
 import { Prefectures } from 'components/elements/CheckBox'
 import { Toaster } from 'react-hot-toast'
+import { Heading } from 'components/elements/Heading'
 import { CheckBoxGroup } from '../CheckBoxGroup'
 
 // ______________________________________________________
@@ -39,6 +40,16 @@ const spacing = css`
     width: 50px;
   }
 `
+const wrap = css`
+  @media (min-width: 768px) {
+    max-width: 600px;
+    margin: auto;
+  }
+  @media (min-width: 1024px) {
+    max-width: 1000px;
+  }
+`
+
 // ______________________________________________________
 // Data
 const defaultPopulationData: PopulationDataByPrefecture[] = [
@@ -101,13 +112,16 @@ export const MainApp: React.VFC = () => {
         <Toaster />
       </div>
       {areaData && (
-        <MainAppContext.Provider value={mainAppContextValue}>
-          <FlexBox>
-            <CheckBoxGroup data={areaData} />
-            <div css={spacing} />
-            <CustomLineChart />
-          </FlexBox>
-        </MainAppContext.Provider>
+        <div css={wrap}>
+          <Heading type="h1">都道府県別の総人口推移グラフ</Heading>
+          <MainAppContext.Provider value={mainAppContextValue}>
+            <FlexBox>
+              <CheckBoxGroup data={areaData} />
+              <div css={spacing} />
+              <CustomLineChart />
+            </FlexBox>
+          </MainAppContext.Provider>
+        </div>
       )}
     </>
   )

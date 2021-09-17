@@ -18,8 +18,6 @@ const wrap = css`
   padding: 30px 25px;
   background-color: var(--bg-white);
   @media (min-width: 768px) {
-    max-width: 600px;
-    margin: auto;
     padding: 40px 30px;
   }
   @media (min-width: 1024px) {
@@ -27,7 +25,6 @@ const wrap = css`
     justify-content: space-between;
     align-items: center;
     padding: 60px 50px;
-    max-width: 1000px;
   }
 `
 // ______________________________________________________

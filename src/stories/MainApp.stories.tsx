@@ -10,7 +10,7 @@ export default {
     docs: {
       description: {
         component:
-          'CustomLineChart+CheckBoxGroup+FlexBoxを用いた今回のプログラムの根幹。全ての状態管理はこのコンポーネントが担います。',
+          'Heading+FlexBox+CustomLineChart+CheckBoxGroupを用いた今回のプログラムの根幹。全ての状態管理はこのコンポーネントが担います。',
       },
     },
   },

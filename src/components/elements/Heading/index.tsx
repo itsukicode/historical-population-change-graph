@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 /* eslint-disable import/first */
 import { css } from '@emotion/react'
-import 'components/pages/App/style.css'
 // ______________________________________________________
 // Type
 type Element = 'h1' | 'h2' | undefined

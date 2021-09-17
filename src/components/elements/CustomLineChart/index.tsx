@@ -65,7 +65,7 @@ export const CustomLineChart: React.VFC = () => {
             domain={['dataMin', 'dataMax']}
             allowDuplicatedCategory={false}
             interval={0}
-            tickCount={20}
+            tickCount={10}
           >
             <Label value="人口数 / 年度" offset={0} position="insideBottom" fontWeight="bold" />
           </XAxis>
@@ -73,7 +73,7 @@ export const CustomLineChart: React.VFC = () => {
             dataKey="value"
             type="number"
             domain={['dataMin-1000', 'dataMax+1000']}
-            width={40}
+            width={45}
           />
           <Tooltip />
           <Legend layout="vertical" align="right" verticalAlign="top" wrapperStyle={{ right: 0 }} />

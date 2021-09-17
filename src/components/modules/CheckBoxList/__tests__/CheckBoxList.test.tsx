@@ -1,7 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { CheckBoxList, PrefectureData } from 'components/modules/CheckBoxList'
-
 import { MainAppContext } from 'components/compositions/MainApp'
 import { PopulationDataByPrefecture } from 'components/elements/CustomLineChart'
 
