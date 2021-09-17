@@ -1,7 +1,9 @@
 /** @jsxImportSource @emotion/react */
 /* eslint-disable import/first */
 import { css } from '@emotion/react'
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useMainContext } from 'components/compositions/MainApp'
+import { toast } from 'react-hot-toast'
 // ______________________________________________________
 // Type
 export type Prefectures =
@@ -56,17 +58,14 @@ export type Prefectures =
 type CheckBoxProps = {
   /**
    * Unique ID for each checkbox
-   * @default 1
    */
   id: number
   /**
    * The text next to the checkbox
-   * @default '東京'
    */
   prefecture: Prefectures
   /**
    *  Whether the checkbox is checked or not
-   * @default false
    */
   checked: boolean
 }
@@ -144,13 +143,28 @@ const text = (prefecture: Prefectures) => css`
 // ______________________________________________________
 // Component
 export const CheckBox: React.VFC<CheckBoxProps> = ({ id, prefecture, checked }) => {
-  const [isChecked, setIsChecked] = useState(false)
+  const [isChecked, setIsChecked] = useState<boolean>(false)
+  const { populationData, handleCheckedCheckBox, handleUncheckedCheckBox } = useMainContext()
   useEffect(() => {
     setIsChecked(checked)
   }, [checked])
 
-  const handleChange = () => {
-    setIsChecked(!isChecked)
+  const handleCheckBoxChange = () => {
+    if (isChecked) {
+      setTimeout(() => {
+        handleUncheckedCheckBox(prefecture)
+        setIsChecked((prevChecked) => !prevChecked)
+      }, 300)
+    } else if (populationData.length < 10) {
+      setTimeout(() => {
+        handleCheckedCheckBox(id, prefecture)
+        setIsChecked((prevChecked) => !prevChecked)
+      }, 300)
+    } else {
+      toast.error('10県まで選択できます', {
+        position: 'top-right',
+      })
+    }
   }
 
   return (
@@ -162,17 +176,11 @@ export const CheckBox: React.VFC<CheckBoxProps> = ({ id, prefecture, checked }) 
           type="checkbox"
           css={input}
           checked={isChecked}
-          onChange={handleChange}
+          onChange={handleCheckBoxChange}
         />
         <span css={checkmark(isChecked)} />
         <span css={text(prefecture)}>{prefecture}</span>
       </label>
     </li>
   )
-}
-
-CheckBox.defaultProps = {
-  id: 1,
-  prefecture: '東京都',
-  checked: false,
 }

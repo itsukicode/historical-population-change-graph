@@ -2,9 +2,37 @@ import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { CheckBoxList, PrefectureData } from 'components/modules/CheckBoxList'
 
+import { MainAppContext } from 'components/compositions/MainApp'
+import { PopulationDataByPrefecture } from 'components/elements/CustomLineChart'
+
+const handleCheckedCheckBox = jest.fn()
+const handleUncheckedCheckBox = jest.fn()
+const populationData: PopulationDataByPrefecture[] = [
+  {
+    prefecture: '東京都', // Legend
+    data: [
+      // Year => X axis value, Value => Y axis value
+      { year: 1985, value: 2817 },
+      { year: 1990, value: 2707 },
+      { year: 2015, value: 2571 },
+      { year: 2045, value: 2199 },
+    ],
+  },
+]
+
+const mainAppContextValue = {
+  populationData,
+  handleCheckedCheckBox,
+  handleUncheckedCheckBox,
+}
+
 describe('CheckBoxList Component', () => {
   it('should render CheckBoxList component successfully', () => {
-    render(<CheckBoxList data={data} />)
+    render(
+      <MainAppContext.Provider value={mainAppContextValue}>
+        <CheckBoxList data={data} />
+      </MainAppContext.Provider>
+    )
     const checkBoxListElement = screen.getByTestId('CHECKBOXLIST')
     expect(checkBoxListElement).toBeInTheDocument()
     expect(checkBoxListElement.querySelectorAll('li').length).toBe(47)

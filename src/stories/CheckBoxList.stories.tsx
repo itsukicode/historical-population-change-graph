@@ -23,8 +23,8 @@ export default {
 
 const Template: ComponentStory<typeof CheckBoxList> = (args) => <CheckBoxList data={args.data} />
 
-export const CheckBoxList1 = Template.bind({})
-CheckBoxList1.args = {
+export const Default = Template.bind({})
+Default.args = {
   data: [
     { prefCode: 1, prefName: '北海道', checked: false },
     { prefCode: 2, prefName: '青森県', checked: false },
